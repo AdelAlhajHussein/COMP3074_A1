@@ -14,6 +14,9 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         tvHistory = findViewById(R.id.tvHistory);
 
@@ -26,5 +29,10 @@ public class DetailActivity extends AppCompatActivity {
             }
             tvHistory.setText(allPayments.toString());
         }
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish(); // closes this activity and returns to MainActivity
+        return true;
     }
 }
