@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         );
 
         tvResult.setText(result);
+        DetailActivity.paymentHistory.add(result);
+
     }
 
     private void clearFields() {
