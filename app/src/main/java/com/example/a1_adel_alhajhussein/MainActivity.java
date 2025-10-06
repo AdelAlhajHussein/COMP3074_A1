@@ -1,3 +1,4 @@
+// Edited by Mehdi Jazi – Group 9 contribution
 package com.example.a1_adel_alhajhussein;
 
 import android.os.Bundle;
