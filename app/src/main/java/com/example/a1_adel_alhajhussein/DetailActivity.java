@@ -1,3 +1,4 @@
+// Verified ListView adapter setup – updated by Mehdi Jazi
 package com.example.a1_adel_alhajhussein;
 
 import android.os.Bundle;
