@@ -1,38 +1,43 @@
 package com.example.a1_adel_alhajhussein;
 
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class DetailActivity extends AppCompatActivity {
 
+    // Shared list (holds payment history from MainActivity)
     public static ArrayList<String> paymentHistory = new ArrayList<>();
-    TextView tvHistory;
+
+    ListView listViewHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        // Enable the back button
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        tvHistory = findViewById(R.id.tvHistory);
+        listViewHistory = findViewById(R.id.listViewHistory);
 
-        if (paymentHistory.isEmpty()) {
-            tvHistory.setText("No payments yet");
-        } else {
-            StringBuilder allPayments = new StringBuilder();
-            for (String record : paymentHistory) {
-                allPayments.append(record).append("\n\n");
-            }
-            tvHistory.setText(allPayments.toString());
-        }
+        // Create an ArrayAdapter to show each item in the ListView
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                paymentHistory
+        );
+
+        listViewHistory.setAdapter(adapter);
     }
+
     @Override
     public boolean onSupportNavigateUp() {
-        finish(); // closes this activity and returns to MainActivity
+        finish(); // go back to MainActivity
         return true;
     }
 }
