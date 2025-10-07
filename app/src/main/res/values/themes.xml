@@ -1,3 +1,8 @@
+<!--
+This file defines the overall theme and appearance of the app,
+including colors, styles, and the parent theme used by all activities.
+-->
+
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.A1_Adel_Alhajhussein" parent="Theme.Material3.DayNight.NoActionBar">

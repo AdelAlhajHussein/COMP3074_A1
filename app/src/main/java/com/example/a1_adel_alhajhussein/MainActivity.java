@@ -1,4 +1,6 @@
 // Edited by Mehdi Jazi – Group 9 contribution
+
+// main logic controller of the app - handles users input, calculation, and navigation
 package com.example.a1_adel_alhajhussein;
 
 import android.os.Bundle;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnClear.setOnClickListener(v -> clearFields());
     }
 
+    //It calculates regular pay, overtime pay, tax, and net pay based on the user’s input.
     private void calculatePay() {
         String hoursStr = etHours.getText().toString().trim();
         String rateStr = etRate.getText().toString().trim();
@@ -75,12 +78,14 @@ public class MainActivity extends AppCompatActivity {
         tvResult.setText("Result will appear here");
     }
 
+    //creates the app’s top menu by loading items from the main_menu.xml file.
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
+    //handles menu clicks and opens the DetailActivity when the "History" option is selected.
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item) {
         if (item.getItemId() == R.id.menu_history) {
