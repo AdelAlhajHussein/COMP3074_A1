@@ -1,9 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!-- COMP3074 Assignment 1 – Manifest reviewed and updated by Mehdi Jazi -->
 <!--
 This file defines the app’s structure and configuration.
 It declares activities, app label, icon, theme, and the launcher activity.
 -->
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.a1_adel_alhajhussein">
